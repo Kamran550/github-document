@@ -1,0 +1,28 @@
+<div class="container">
+  
+
+<div class="container log-error">
+    {{#if errorText}}
+      <div class="alert alert-danger" role="alert">
+        {{errorText}}
+      </div>
+    {{/if}}
+  </div>
+
+
+    <form method="post">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Kohne parolunuzu daxil edin.</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" name="oldPassword"
+                aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Yeni parolunuzu daxil edin</label>
+            <input type="text" class="form-control" name="newPassword" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary form-control">Submit</button>
+
+        </div>
+    </form>
+</div>

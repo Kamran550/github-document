@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="../../sources/style.css">
+</head>
+
+<body>
+
+  <nav class=" container navbar navbar-expand-lg navbar-light bg-light">
+    {{!-- <a class="navbar-link" href="/addfile">File Add</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"> --}}
+      {{!-- <span class="navbar-toggler-icon"></span> --}}
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="/addfile">File Add <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/users/1">Users <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link " href="/adduser">Add User</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link " href="/settings">Settings</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link " href="/exit">Exit</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link " href="/inbox">Gelenler</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link " href="/accepted">Accepted</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link " href="/rejected">Rejected</a>
+        </li>
+         <li class="nav-item active">
+          <a class="nav-link " href="/admin">Admin</a>
+        </li>
+      </ul>
+      {{!-- <form class="form-inline my-2 my-lg-0 inbox" method="post" action="/inbox">
+        <button class="btn btn-success">Gelenler</button>
+      </form> --}}
+
+    </div>
+  </nav>
+  {{{body}}}
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="/sources/script.js"></script>
+</body>
+
+
+
+</html>

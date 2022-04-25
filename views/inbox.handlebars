@@ -1,0 +1,73 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Company</th>
+                <th scope="col">Document</th>
+                <th colspan="5" class="text-center">Cavab</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each doc}}
+            <tr>
+                <td>{{this.sender}}</td>
+                <td>{{this.sendingCompany}}</td>
+                <td>{{this.docName}}</td>
+                <td>
+                    <button class="btn accept btn-success" value="{{this.id}}">Accepted</button>
+                </td>
+                <td>
+                    <button class="btn reject btn-danger" value="{{this.id}}">Rejected</button>
+                </td>
+            </tr>
+            {{/each}}
+
+        </tbody>
+    </table>
+</div>
+
+
+
+
+<script>
+    var accept = $(".accept")
+    var reject = $(".reject")
+
+    accept.on('click', function (e) {
+        const val1 = $(this).val()
+        var isAccept = confirm('Qebul etmek istediyinize eminsiniz?')
+
+        if (isAccept) {
+            $.ajax({
+                url: `/accept/${val1}`,
+                method: 'GET'
+            }).done(function (result) {
+                console.log(result)
+                window.location.reload()
+            });
+        } else {
+            window.location.reload()
+        }
+    });
+
+
+    reject.on('click', function (e) {
+        const val2 = $(this).val()
+
+        var isReject = confirm('Redd etmek istediyinize eminsiniz?')
+
+        if (isReject) {
+            $.ajax({
+                url: `/reject/${val2}`,
+                method: 'GET'
+            }).done(function (result) {
+                window.location.reload()
+            })
+        } else {
+            window.location.reload()
+        }
+
+
+    })
+</script>

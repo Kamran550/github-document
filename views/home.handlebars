@@ -1,0 +1,56 @@
+
+<table class="one text-center table" ></table>
+
+
+<div class="container text-center">
+    {{#each users}}
+    <h2>{{this.firstname}},{{this.lastname}} {{this.Companies.name}}</h2>
+    {{/each}}
+</div>
+
+
+<script>
+  
+
+    btn.on('click', (e) => {
+        e.preventDefault()
+        $(".context").show()
+
+    })
+
+    {{!-- var b1 = $(".pending")
+    b1.on('click', () => {
+        $("one").empty()
+        $.ajax({
+            url: '/home/pending',
+            method: 'GET'
+        }).done(function (result) {
+            const docs = result.doc
+            console.log(result)
+            for (var res of docs) {
+                $(".one").append(`<table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Company</th>
+                <th scope="col">Document</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>${res.sender}</td>
+                <td>${res.sendingCompany}</td>
+                <td>${res.docName}</td>
+                <td><button>Accept</button></td>
+            </tr>
+
+        </tbody>
+    </table>`)
+                console.log(res)
+                console.log(res.docName)
+            }
+        })
+    }) --}}
+
+</script>

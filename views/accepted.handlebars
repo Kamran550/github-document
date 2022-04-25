@@ -1,0 +1,28 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Company</th>
+                <th scope="col">Document</th>
+                <th colspan="5" class="text-center">Cavab</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each doc}}
+            <tr>
+                <td>{{this.sender}}</td>
+                <td>{{this.sendingCompany}}</td>
+                <td>{{this.docName}}</td>
+                <td>
+                    <a href="{{this.docPath}}" download>Download</a>
+                </td>
+                <td>
+                    <a href="">kncwucwiuhwifuhw</a>
+                </td>
+            </tr>
+            {{/each}}
+
+        </tbody>
+    </table>
+</div>

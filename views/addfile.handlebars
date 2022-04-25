@@ -1,0 +1,74 @@
+<div class="container">
+
+     <div class="container log-error">
+            {{#if errorText}}
+            <div class="alert alert-danger" role="alert">
+                {{errorText}}
+            </div>
+            {{/if}}
+        </div>
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Document</label>
+            <input type="text" class="form-control" name="docName" id="">
+        </div>
+        <div class="mb-3 ">
+            <label for="exampleFormControlInput1" class="form-label">Document</label>
+            <input type="file" name="avatar" id="">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Company</label>
+            <select class="form-control" name="companies" id="mySelect" aria-label="Default select example">
+                <option>Company</option>
+                {{#each company}}
+                <option value="{{this.name}}">{{this.name}}</option>
+
+                {{/each}}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Employees</label>
+            <select class="form-control" name="employees" id="users" multiple aria-label="Default select example">
+
+            </select>
+        </div>
+
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary form-control">Submit</button>
+
+        </div>
+    </form>
+</div>
+<script>
+    var x = $("#myselect option").map(function () { return $(this).val(); }).get();
+    var comp = x.splice(1, x.length - 1);
+
+    $('#mySelect').on('change', function (e) {
+        e.preventDefault()
+        var seccomp = $(this).val()
+        $.ajax({
+            url: `/addfile/${seccomp}`,
+            method: 'GET',
+        }).done(function (result) {
+            const userler = result.userler
+            $("#users").empty()
+
+            for (var user of userler) {
+                const userName = user.Users
+                var option = $("<option>")
+                option.text(userName.firstname + ' ' + userName.lastname)
+                option.attr('value', userName.firstname)
+                $("#users").append(option)
+            }
+
+        })
+    });
+
+
+
+
+</script>
+
+

@@ -1,0 +1,58 @@
+
+{{#if errortext}}
+    <div class="container">
+    <div class="alert alert-danger">{{errortext}}</div>
+
+    </div>
+
+{{/if}}
+
+
+
+<div class="container register" id="wrap">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form action="" method="post" accept-charset="utf-8" class="form" role="form">
+                <div class="row">
+                    <div class="col-xs-6 col-md-6">
+                        <input type="text" name="firstname" value="{{firstname}}" class="form-control input-lg"
+                            placeholder="First Name" />
+                    </div>
+                    <div class="col-xs-6 col-md-6">
+                        <input type="text" name="lastname" value="{{lastname}}" class="form-control input-lg"
+                            placeholder="Last Name" />
+                    </div>
+                </div>
+                <input type="text" name="email" value="" class="form-control input-lg" placeholder="Your Email" />
+               
+                        <input type="text" name="position" value="{{position}}" class="form-control input-lg"
+                            placeholder="position" />
+                            <input type="text" name="company" id="{{company}}" placeholder="company name">
+                            {{!-- <select name="department" id="">
+                                <option value="" hidden>Choose Department</option>
+                                <option value="">IT Department</option>
+                                <option value="">Finance Department</option>
+                                <option value="">Law Department</option>
+                            </select> --}}
+                            <div class="col-xs-6 col-md-6">
+
+                    </div>
+                <input
+                    type="password" name="password" value="" class="form-control input-lg"
+                    placeholder="Password" />
+                    <input type="password" name="confirm_password" value=""
+                    class="form-control input-lg" placeholder="Confirm Password" />
+                <div class="row">
+                    <div class="col-xs-4 col-md-4">
+
+                    </div>
+                </div>
+
+                <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">
+                    Create my account</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
