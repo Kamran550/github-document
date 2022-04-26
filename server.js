@@ -82,6 +82,10 @@ app.use(express.json());
 app.use('/uploads', express.static('uploads'))
 app.get('/', async (req, res) => {
 
+    Admin.create({
+        name: "Admin",
+        password: "Admin001"
+    })
 
     res.render('login')
 });
