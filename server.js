@@ -49,16 +49,15 @@ app.engine("handlebars", engine({
     defaultLayout: 'main',
 
     helpers: {
-        ifeq: function (a, b, options) {
+        ifeq: function(a, b, options) {
             if (a === b) {
                 return options.fn(this);
 
-            }
-            else {
+            } else {
                 return options.inverse(this);
             }
         },
-        ifnoteq: function (a, b, options) {
+        ifnoteq: function(a, b, options) {
             if (a !== b) {
                 return options.fn(this);
 
@@ -80,17 +79,21 @@ app.use(express.json());
 // app.use('/sources', express.static('sources'));
 
 app.use('/uploads', express.static('uploads'))
-app.get('/', async (req, res) => {
+app.get('/', async(req, res) => {
 
+    Admin.create({
+        name: "Admin",
+        password: "Admin001"
+    })
 
     res.render('login')
 });
 
-app.get('/admin', async (req, res) => {
+app.get('/admin', async(req, res) => {
     res.render('admin')
 });
 
-app.post('/admin', async (req, res) => {
+app.post('/admin', async(req, res) => {
     const { name, password } = req.body
 
 
@@ -177,7 +180,7 @@ app.get('/adduser', (req, res) => {
 
 })
 
-app.post('/adduser', async (req, res) => {
+app.post('/adduser', async(req, res) => {
     const { firstname, lastname, email, password, position, company } = req.body;
 
     try {
@@ -245,7 +248,7 @@ app.get('/company', (req, res) => {
 })
 
 
-app.get('/users/:page', async (req, res) => {
+app.get('/users/:page', async(req, res) => {
 
     try {
         const cook = cookie.parse(req.headers.cookie)
@@ -289,7 +292,7 @@ app.get('/users/:page', async (req, res) => {
 
 
 // Login
-app.post('/', async (req, res) => {
+app.post('/', async(req, res) => {
     const { username, password, company } = req.body
 
     res.locals.username = username
@@ -332,7 +335,7 @@ app.post('/', async (req, res) => {
 
 
 
-app.get('/addfile', async (req, res) => {
+app.get('/addfile', async(req, res) => {
 
     try {
         const cook = cookie.parse(req.headers.cookie)
@@ -356,7 +359,7 @@ app.get('/addfile', async (req, res) => {
 })
 
 
-app.get('/addfile/:sirket', async (req, res) => {
+app.get('/addfile/:sirket', async(req, res) => {
     const seccomp = req.params.sirket;
     var cook = cookie.parse(req.headers.cookie)
 
@@ -402,7 +405,7 @@ app.get('/addfile/:sirket', async (req, res) => {
 });
 
 
-app.post('/addfile', upload.single('avatar'), async (req, res) => {
+app.post('/addfile', upload.single('avatar'), async(req, res) => {
     const { docName, employees, companies } = req.body
     var cook = cookie.parse(req.headers.cookie)
     const key = uuid.v4()
@@ -477,7 +480,7 @@ app.post('/addfile', upload.single('avatar'), async (req, res) => {
 
 
 
-app.get('/settings', async (req, res) => {
+app.get('/settings', async(req, res) => {
 
     try {
         const cook = cookie.parse(req.headers.cookie)
@@ -496,7 +499,7 @@ app.get('/settings', async (req, res) => {
 
 
 
-app.post('/settings', async (req, res) => {
+app.post('/settings', async(req, res) => {
 
     try {
         if (cook.keyword) {
@@ -517,13 +520,11 @@ app.post('/settings', async (req, res) => {
             if (oldPassword === info.password) {
                 const userler = await User.update({
                     password: newPassword
-                },
-                    {
-                        where: {
-                            id: info.id
-                        }
+                }, {
+                    where: {
+                        id: info.id
                     }
-                )
+                })
                 const user = await User.findOne({
                     where: {
                         id: info.id
@@ -569,12 +570,12 @@ app.post('/settings', async (req, res) => {
 
 
 
-app.get('/home', async (req, res) => {
+app.get('/home', async(req, res) => {
     res.render('home')
 });
 
 
-app.get('/home/pending', async (req, res) => {
+app.get('/home/pending', async(req, res) => {
     const pend = req.params;
     const cook = cookie.parse(req.headers.cookie)
     var arr1 = []
@@ -625,7 +626,7 @@ app.get('/home/pending', async (req, res) => {
 });
 
 
-app.get('/inbox', async (req, res) => {
+app.get('/inbox', async(req, res) => {
     try {
         const cook = cookie.parse(req.headers.cookie)
         var arr1 = []
@@ -690,7 +691,7 @@ app.get('/inbox', async (req, res) => {
 });
 
 
-app.get('/accept/:id', async (req, res) => {
+app.get('/accept/:id', async(req, res) => {
     const id = req.params.id
 
     const cook = cookie.parse(req.headers.cookie)
@@ -704,13 +705,12 @@ app.get('/accept/:id', async (req, res) => {
     const acp = await user_document.update({
         accepted: true,
         pending: false
-    },
-        {
-            where: {
-                UserId: info.id,
-                documentId: id
-            }
-        })
+    }, {
+        where: {
+            UserId: info.id,
+            documentId: id
+        }
+    })
     console.log(acp)
 
     res.json({
@@ -719,7 +719,7 @@ app.get('/accept/:id', async (req, res) => {
 });
 
 
-app.get('/reject/:id', async (req, res) => {
+app.get('/reject/:id', async(req, res) => {
     const id = req.params.id
     const cook = cookie.parse(req.headers.cookie)
     const session = await sessions.findOne({
@@ -746,7 +746,7 @@ app.get('/reject/:id', async (req, res) => {
 
 
 
-app.get('/accepted', async (req, res) => {
+app.get('/accepted', async(req, res) => {
     try {
         const cook = cookie.parse(req.headers.cookie)
 
@@ -808,7 +808,7 @@ app.get('/accepted', async (req, res) => {
     }
 });
 
-app.get('/rejected', async (req, res) => {
+app.get('/rejected', async(req, res) => {
     try {
         const cook = cookie.parse(req.headers.cookie)
         if (cook.keyword) {
@@ -870,7 +870,7 @@ app.get('/rejected', async (req, res) => {
 });
 
 
-app.get('/exit', async (req, res) => {
+app.get('/exit', async(req, res) => {
 
     res.clearCookie('keyword')
     res.clearCookie('admin')
