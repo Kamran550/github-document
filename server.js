@@ -259,8 +259,8 @@ app.get('/users/:page', async (req, res) => {
                 include: {
                     model: Company
                 },
-                raw:true,
-                nest:true
+                raw: true,
+                nest: true
             });
             const cnt = Math.ceil((comp) / 5);
             for (let i = 1; i <= cnt; i++) {
@@ -358,15 +358,43 @@ app.get('/addfile', async (req, res) => {
 
 app.get('/addfile/:sirket', async (req, res) => {
     const seccomp = req.params.sirket;
+    var cook = cookie.parse(req.headers.cookie)
+
+    const session = await sessions.findOne({
+        where: {
+            keyword: cook.keyword
+        }
+    })
+    const info = JSON.parse(session.data);
+    console.log('info:', info.id);
+    const sirketler = await User.findAll({
+        raw: true,
+        where: {
+            id: info.id
+        },
+        include: {
+            model: Company
+        },
+        nest: true
+    });
+    console.log('sirketler:', sirketler[0].id);
     const userler = await Company.findAll({
         where: {
             name: seccomp
         },
         raw: true,
-        include: User,
+        include: {
+            model: User,
+            where: {
+                id: {
+                    [Op.ne]: sirketler[0].id
+                }
+            }
+        },
         nest: true
     })
 
+    console.log('isciler:', userler);
 
     res.json({
         userler
