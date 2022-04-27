@@ -9,25 +9,27 @@
 
 
 
-<div class="container register" id="wrap">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+<div class=" card mt-5 container register" id="wrap">
+    <div class="row col-md-12">
+
+
+        <div class="col-md-6 col-md-offset-3 formUser">
             <form action="" method="post" accept-charset="utf-8" class="form" role="form">
                 <div class="row">
                     <div class="col-xs-6 col-md-6">
-                        <input type="text" name="firstname" value="{{firstname}}" class="form-control input-lg"
+                        <input type="text" name="firstname" value="{{firstname}}" class="form-control input-lg formInput"
                             placeholder="First Name" />
                     </div>
                     <div class="col-xs-6 col-md-6">
-                        <input type="text" name="lastname" value="{{lastname}}" class="form-control input-lg"
+                        <input type="text" name="lastname" value="{{lastname}}" class="form-control input-lg formInput"
                             placeholder="Last Name" />
                     </div>
                 </div>
-                <input type="text" name="email" value="" class="form-control input-lg" placeholder="Your Email" />
+                <input type="text" name="email" value="" class="form-control input-lg formInput" placeholder="Your Email" />
                
-                        <input type="text" name="position" value="{{position}}" class="form-control input-lg"
+                        <input type="text" name="position" value="{{position}}" class="form-control input-lg formInput"
                             placeholder="position" />
-                            <input type="text" name="company" id="{{company}}" placeholder="company name">
+                            <input type="text" name="company" id="{{company}}" placeholder="company name" class="form-control input-lg formInput">
                             {{!-- <select name="department" id="">
                                 <option value="" hidden>Choose Department</option>
                                 <option value="">IT Department</option>
@@ -38,21 +40,93 @@
 
                     </div>
                 <input
-                    type="password" name="password" value="" class="form-control input-lg"
+                    type="password" name="password" value="" class="form-control input-lg formInput"
                     placeholder="Password" />
                     <input type="password" name="confirm_password" value=""
-                    class="form-control input-lg" placeholder="Confirm Password" />
+                    class="form-control input-lg formInput" placeholder="Confirm Password" />
                 <div class="row">
                     <div class="col-xs-4 col-md-4">
 
                     </div>
                 </div>
 
-                <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">
-                    Create my account</button>
+                <div class="btnForm">
+                    <button class="btn btn-lg btn-block signup-btn formBtn" type="submit">Create my account</button>
+                </div>
             </form>
         </div>
+         <div class="imgPart col-md-6">
+                   <img src="../uploads/img_new_user.jpg" alt="" class="loginImg">
     </div>
+    </div>
+
+    
 </div>
 </div>
 
+<style>
+    .card
+    {
+        background-color: #fff !important;
+        position: relative;
+        z-index: 400;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .card:hover {
+      box-shadow: 10px 15px 10px -10px rgba(31, 31, 31, 0.5);
+      transition: all 0.5s ease;
+    }
+     .loginImg
+    {
+        height: 70%;
+        width: 90%;
+        margin-top: 3rem;
+    }
+    .imgPart
+    {
+        display: flex;
+
+    }
+    .inputPart
+    {
+        position: relative;
+        right: 0;
+        margin-top: 2rem;
+
+    }
+    .formUser
+    {
+        display: flex;
+        flex-direction: row;
+        padding: 3rem;
+    }
+    .formInput
+    {
+        border-radius: 18px;
+        margin: 1rem;
+    }
+    .formBtn
+    {
+         border-radius: 20px;
+         background-color: #487AFF;
+         width: fit-content;
+         color: white;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .formBtn:hover
+    {
+        background-color: #3b6ffd;
+    }
+    .btnForm
+    {
+        display: flex;
+        justify-content: center;
+    }
+</style>

@@ -7,18 +7,24 @@
             </div>
             {{/if}}
         </div>
-    <form method="post" enctype="multipart/form-data">
+        <div class=" card mt-3 row justify-content-center align-items-center">
+               <div class="imgPart col-md-10">
+                   <img src="../uploads/upload_file.jpg" alt="" class="loginImg">
+                </div>
+
+            <div id="login-box" class="col-md-8 mt-3" >
+ <form method="post" enctype="multipart/form-data">
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Document</label>
-            <input type="text" class="form-control" name="docName" id="">
+            <label for="exampleFormControlInput1" class="form-label textForm">Document</label>
+            <input type="text" class="form-control formInput" name="docName" id="">
         </div>
         <div class="mb-3 ">
-            <label for="exampleFormControlInput1" class="form-label">Document</label>
+            <label for="exampleFormControlInput1" class="form-label textForm">Document</label>
             <input type="file" name="avatar" id="">
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Company</label>
-            <select class="form-control" name="companies" id="mySelect" aria-label="Default select example">
+            <label for="exampleFormControlTextarea1" class="form-label textForm">Company</label>
+            <select class="form-control formInput" name="companies" id="mySelect" aria-label="Default select example">
                 <option>Company</option>
                 {{#each company}}
                 <option value="{{this.name}}">{{this.name}}</option>
@@ -28,18 +34,21 @@
         </div>
 
         <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Employees</label>
+            <label for="exampleFormControlTextarea1" class="form-label textForm">Employees</label>
             <select class="form-control" name="employees" id="users" multiple aria-label="Default select example">
 
             </select>
         </div>
 
 
-        <div class="mb-3">
-            <button type="submit" class="btn btn-primary form-control">Submit</button>
-
+        <div class="mb-3 btnForm">
+            <button type="submit" class="btn form-control formBtn">Submit</button>
         </div>
-    </form>
+         </form>
+
+            </div>
+        </div>
+   
 </div>
 <script>
     var x = $("#myselect option").map(function () { return $(this).val(); }).get();
@@ -72,3 +81,75 @@
 </script>
 
 
+<style>
+    .card
+    {
+        background-color: #fff !important;
+        position: relative;
+        z-index: 400;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card:hover {
+      box-shadow: 10px 15px 10px -10px rgba(31, 31, 31, 0.5);
+      transition: all 0.5s ease;
+    }
+    .loginImg
+    {
+        height: 50%;
+        width: 45%;
+        margin-top: 3rem;
+    }
+    .imgPart
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+    }
+    .inputPart
+    {
+        position: relative;
+        right: 0;
+        margin-top: 2rem;
+    }
+    .formUser
+    {
+        display: flex;
+        flex-direction: row;
+        padding: 3rem;
+    }
+    .textForm
+    {
+        color: #998efc;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .formInput
+    {
+        border-radius: 18px;
+    }
+    .formBtn
+    {
+         border-radius: 20px;
+         background-color: #487AFF;
+         width: 42%;
+         color: white;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .formBtn:hover
+    {
+        background-color: #3b6ffd;
+    }
+    .btnForm
+    {
+        display: flex;
+        justify-content: center;
+    }
+
+</style>

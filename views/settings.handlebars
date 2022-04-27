@@ -10,19 +10,97 @@
   </div>
 
 
-    <form method="post">
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Kohne parolunuzu daxil edin.</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="oldPassword"
-                aria-describedby="emailHelp">
+   <div class="card mt-4">
+      <div class="col-md-12 formPass">
+       <div id="login-box" class="col-md-6 inputPart" >
+         <form method="post">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label textForm">Kohne parolunuzu daxil edin.</label>
+                <input type="text" class="form-control formInput" id="exampleInputEmail1" name="oldPassword"
+                    aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label textForm mt-4 ">Yeni parolunuzu daxil edin</label>
+                <input type="text" class="form-control formInput" name="newPassword" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 btnForm">
+                <button type="submit" class="btn form-control formBtn">Submit</button>
+            </div>
+         </form>
+      </div>
+      <div class="imgPart col-md-6">
+                   <img src="../uploads/set_password.png" alt="" class="loginImg">
         </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Yeni parolunuzu daxil edin</label>
-            <input type="text" class="form-control" name="newPassword" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3">
-            <button type="submit" class="btn btn-primary form-control">Submit</button>
-
-        </div>
-    </form>
+      </div>
+   </div>
 </div>
+
+<style>
+    .card
+    {
+        background-color: #fff !important;
+        position: relative;
+        z-index: 400;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .card:hover {
+      box-shadow: 10px 15px 10px -10px rgba(31, 31, 31, 0.5);
+      transition: all 0.5s ease;
+    }
+     .loginImg
+    {
+        height: 70%;
+        width: 90%;
+        margin-top: 3rem;
+    }
+    .imgPart
+    {
+        display: flex;
+    }
+    .inputPart
+    {
+        margin-top: 5rem;
+        margin-right: 1rem;
+
+    }
+    .textForm
+    {
+        color: #afa7fd;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.2rem;
+    }
+    .formPass
+    {
+        display: flex;
+        flex-direction: row;
+        padding: 3rem;
+    }
+    .formInput
+    {
+        border-radius: 18px;
+    }
+    .formBtn
+    {
+         border-radius: 20px;
+         background-color: #487AFF;
+         width: 42%;
+         color: white;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .formBtn:hover
+    {
+        background-color: #3b6ffd;
+    }
+    .btnForm
+    {
+        display: flex;
+        justify-content: center;
+    }
+  </style>
