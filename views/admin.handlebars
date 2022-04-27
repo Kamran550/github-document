@@ -1,53 +1,39 @@
 <div id="login">
-
-  <h1 class="text-center">Admin kimi daxil olun</h1>
-
-  <div class="container">
-    <div class="container log-error">
-      {{#if errorText}}
-        <div class="alert alert-danger" role="alert">
-          {{errorText}}
+<h1 class="text-center txtAdmin">Admin kimi daxil olun</h1>
+    
+    <div class="container">
+        <div class="container log-error">
+            {{#if errorText}}
+            <div class="alert alert-danger" role="alert">
+                {{errorText}}
+            </div>
+            {{/if}}
         </div>
-      {{/if}}
-    </div>
-    <div id="login-row" class="row justify-content-center align-items-cente">
-      <div id="login-column" class="col-md-6">
-        <div id="login-box" class="col-md-12">
-          <form id="login-form" class="form" action="/admin" method="post">
-            <h3 class="text-center text-info">Login</h3>
-            <div class="form-group">
-              <label for="username" class="text-info">Username:</label><br />
-              <input
-                type="text"
-                name="name"
-                id="username"
-                value="{{username}}"
-                class="form-control"
-              />
+        <div id="login-row" class=" card mt-3 row justify-content-center align-items-cente ">
+            <div id="login-column" class="col-md-12 formUser">
+                <div class="imgPart col-md-6">
+                   <img src="../uploads/img_admin_login.jpg" alt="" class="loginImg">
+                </div>
+                <div id="login-box" class="col-md-6" >
+                    <form id="login-form" class="form" action="/admin" method="post">
+                        <h3 class="text-center textLogin">Login</h3>
+                        <div class="form-group">
+                            <label for="username" class="textForm">Username:</label><br>
+                            <input type="text" name="name" id="username" value="{{username}}" class="form-control formInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="textForm">Password:</label><br>
+                            <input type="text" name="password" id="password" class="form-control formInput">
+                        </div>
+                     
+                        <div class="form-group btnForm">
+                            <input type="submit" name="submit" class=" form-control btn btn-md formBtn" value="submit">
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-              <label for="password" class="text-info">Password:</label><br />
-              <input
-                type="text"
-                name="password"
-                id="password"
-                class="form-control"
-              />
-            </div>
-
-            <div class="form-group">
-              <input
-                type="submit"
-                name="submit"
-                class="form-control btn btn-info btn-md"
-                value="submit"
-              />
-            </div>
-          </form>
         </div>
-      </div>
     </div>
-  </div>
 </div>
 
 
@@ -72,3 +58,88 @@
       </div>
     </div>
   </div>
+
+
+<style>
+    .card
+    {
+        background-color: #fff !important;
+        position: relative;
+        z-index: 400;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .card:hover {
+      box-shadow: 10px 15px 10px -10px rgba(31, 31, 31, 0.5);
+      transition: all 0.5s ease;
+    }
+     .loginImg
+    {
+        height: 75%;
+        width: 90%;
+        margin-top: 3rem;
+    }
+    .imgPart
+    {
+        display: flex;
+
+    }
+    .inputPart
+    {
+        position: relative;
+        right: 0;
+        margin-top: 2rem;
+    }
+    .formUser
+    {
+        display: flex;
+        flex-direction: row;
+        padding: 3rem;
+    }
+    .textLogin
+    {
+        color: #3b6ffd;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .textForm
+    {
+        color: #BBB4FF;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.2rem;
+    }
+    .formInput
+    {
+        border-radius: 18px;
+    }
+    .formBtn
+    {
+         border-radius: 20px;
+         background-color: #487AFF;
+         width: 42%;
+         color: white;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .formBtn:hover
+    {
+        background-color: #3b6ffd;
+    }
+    .btnForm
+    {
+        display: flex;
+        justify-content: center;
+    }
+    .txtAdmin
+    {
+        margin-top: 2rem;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: #1751ef;
+    }
+</style>

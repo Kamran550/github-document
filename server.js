@@ -321,7 +321,7 @@ app.post('/', async (req, res) => {
         if (login && login['Companies.name'] === company) {
             res.append('set-cookie', 'keyword=' + keyword)
 
-            res.redirect('/home')
+            res.redirect('/addfile')
         } else {
             res.render('login', {
                 errorText: 'Daxil edilen melumatlar sefdir'
