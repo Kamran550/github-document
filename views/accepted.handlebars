@@ -8,6 +8,7 @@
         background-color: #F1F4FC;
         border-radius: 10px;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        overflow: hidden;
     }
 
     .table thead, .table tbody {
@@ -33,8 +34,10 @@
     .download, .answer {
         color: #5E7CE2;
         font-weight: 500;
-        text-decoration: none;
-        cursor: pointer;
+        cursor: pointer !important;
+    }
+    .download:hover {
+        color: #5E7CE2;
     }
 </style>
 
@@ -54,11 +57,11 @@
                 <td>{{this.sender}}</td>
                 <td>{{this.sendingCompany}}</td>
                 <td>{{this.docName}}</td>
-                <td>
-                    <a href="{{this.docPath}}" download>Download</a>
-                </td>
-                <td>
-                    <a href="">kncwucwiuhwifuhw</a>
+                <td class="text-center">
+                    <a class="text-decoration-none download" href="{{this.docPath}}" download> 
+                        <svg fill="#5E7CE2" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M12 21l-8-9h6v-12h4v12h6l-8 9zm9-1v2h-18v-2h-2v4h22v-4h-2z"/></svg> 
+                        Download
+                    </a>
                 </td>
             </tr>
             {{/each}}

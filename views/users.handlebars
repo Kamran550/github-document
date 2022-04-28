@@ -4,10 +4,13 @@
         background-color: #fff;
         font-family: 'DM Sans', sans-serif;
     }
+
     .table {
+        margin-top: 20px;
         background-color: #F1F4FC;
-        border-radius: 10px;
+        border-radius: 12px;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        overflow: hidden;
     }
 
     .table thead, .table tbody {
@@ -84,7 +87,54 @@
       box-shadow: 10px 15px 10px -10px rgba(31, 31, 31, 0.5);
       transition: all 0.5s ease;
     }
+    .pagination {
+        justify-content: center !important;
+        align-items: center;
+        gap: 5px;
+        padding: 8px;
+        line-height: 40px;
+        transition: all 0.5s ease;
+        color: #5E7CE2;
+        fill: #5E7CE2;
+    }
+
+    .btnofpag {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .btnofpag:hover {
+        text-decoration: none;
+    }
+
+    .pagination .btn {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        height: 40px;
+        cursor: pointer;
+    }
+    .pagination .btn.prev {
+        border-radius: 25px 5px 5px 25px;
+    }
+    .pagination .btn.next {
+        border-radius: 5px 25px 25px 5px;
+    }
+    .pagination .btnofpag,
+    .pagination .btnofpag.active,
+    .pagination .btnofpag:hover,
+    .pagination .btn:hover{
+        background-color: #5E7CE2;
+        color: #fff !important;
+    }
+    .pagination .btn:hover svg {
+        fill: #fff;
+    }
 </style>
+        {{!-- background-color: #F1F4FC; --}}
 
 <div class="container">
     {{#if result}}
@@ -140,9 +190,16 @@
     {{#if pagination}}
 
     <div class="pagination">
+        <div class="btn prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg>
+            Prev
+        </div>
         {{#each pagination}}
-        <a href="/users/{{this}}" class="btnofpag">{{this}}</a>
+        <a href="/users/{{this}}" class="btnofpag active">{{this}}</a>
         {{/each}}
+        <div class="btn next">
+          Next  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z"/></svg>
+        </div>
     </div>
     {{/if}}
 
