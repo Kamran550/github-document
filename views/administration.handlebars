@@ -1,3 +1,28 @@
+
+   <div class="containerAdminCard">
+         <div class="card adminCard">
+          <h1 class="text-center txtAdminCardH">Admin üçün keçidlər</h1>
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="row">
+      <div class="col btnAdm">
+        <a class="btn btnAdminCard" href="/users/1">Users</a>
+
+      </div>
+      <div class="col btnAdm">
+        <a class="btn btnAdminCard" href="/adduser">Add User</a>
+
+      </div>
+      <div class="col btnAdm">
+        <a class="btn btnAdminCard" href="/admin">Admin</a>
+
+      </div>
+    </div>
+  </div>
+     </div>
+   </div>
+
+
+
 {{#if errortext}}
     <div class="container">
     <div class="alert alert-danger">{{errortext}}</div>
@@ -8,7 +33,7 @@
 
 
 
-<div class=" card mt-5 container register" id="wrap">
+<div class=" card mt-5 container register" id="wrap" style="margin-bottom: 4rem;">
     <div class="row col-md-12">
 
 
@@ -64,30 +89,6 @@
 </div>
 
 
-    
-   <div class="containerAdminCard">
-         <div class="card adminCard">
-          <h1 class="text-center txtAdminCardH">Admin üçün keçidlər</h1>
-<div class="container d-flex justify-content-center align-items-center">
-    <div class="row">
-      <div class="col">
-        <a class="btn btnAdminCard" href="/users/1">Users</a>
-
-      </div>
-      <div class="col">
-        <a class="btn btnAdminCard" href="/adduser">Add User</a>
-
-      </div>
-      <div class="col">
-        <a class="btn btnAdminCard" href="/admin">Admin</a>
-
-      </div>
-    </div>
-  </div>
-     </div>
-   </div>
-
-
 <style>
      .btnAdminCard
     {
@@ -116,19 +117,18 @@
          color: #3b6ffd;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
-    .adminCard
+     .adminCard
     {
         display: flex;
         flex-direction: column !important;
         justify-content: center;
         align-items: center;
         position: relative;
-        margin-top: 8rem;
-        margin-bottom: 10rem;
-        padding: 4rem;
-        width: 75%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        width: 50%;
     }
-
     .card
     {
         background-color: #fff !important;
@@ -138,6 +138,13 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .btnAdm
+    {
+        margin: 0.2rem;
     }
 
     .card:hover {

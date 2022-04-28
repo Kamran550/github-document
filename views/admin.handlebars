@@ -1,6 +1,27 @@
-<div id="login">
-<h1 class="text-center txtAdmin">Admin kimi daxil olun</h1>
-    
+ <div class="containerAdminCard">
+         <div class="card adminCard">
+          <h1 class="text-center txtAdminCardH">Admin üçün keçidlər</h1>
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="row">
+      <div class="col btnAdm">
+        <a class="btn btnAdminCard" href="/users/1">Users</a>
+
+      </div>
+      <div class="col btnAdm">
+        <a class="btn btnAdminCard" href="/adduser">Add User</a>
+
+      </div>
+      <div class="col btnAdm">
+        <a class="btn btnAdminCard" href="/admin">Admin</a>
+
+      </div>
+    </div>
+  </div>
+     </div>
+   </div>
+
+
+<div id="login" style="margin-bottom: 4rem;">   
     <div class="container">
         <div class="container log-error">
             {{#if errorText}}
@@ -16,7 +37,7 @@
                 </div>
                 <div id="login-box" class="col-md-6" >
                     <form id="login-form" class="form" action="/admin" method="post">
-                        <h3 class="text-center textLogin">Login</h3>
+                        <h3 class="text-center textLogin">Admin login</h3>
                         <div class="form-group">
                             <label for="username" class="textForm">Username:</label><br>
                             <input type="text" name="name" id="username" value="{{username}}" class="form-control formInput">
@@ -37,28 +58,7 @@
 </div>
 
 
-   <div class="containerAdminCard">
-         <div class="card adminCard">
-          <h1 class="text-center txtAdminCardH">Admin üçün keçidlər</h1>
-<div class="container d-flex justify-content-center align-items-center">
-    <div class="row">
-      <div class="col">
-        <a class="btn btnAdminCard" href="/users/1">Users</a>
-
-      </div>
-      <div class="col">
-        <a class="btn btnAdminCard" href="/adduser">Add User</a>
-
-      </div>
-      <div class="col">
-        <a class="btn btnAdminCard" href="/admin">Admin</a>
-
-      </div>
-    </div>
-  </div>
-     </div>
-   </div>
-
+  
 
 <style>
     .btnAdminCard
@@ -95,10 +95,10 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        margin-top: 10rem;
-        margin-bottom: 10rem;
-        padding: 4rem;
-        width: 75%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        width: 50%;
     }
     .card
     {
@@ -109,6 +109,13 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .btnAdm
+    {
+        margin: 0.2rem;
     }
 
     .card:hover {

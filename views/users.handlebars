@@ -66,10 +66,10 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        margin-top: 8rem;
-        margin-bottom: 10rem;
-        padding: 4rem;
-        width: 75%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        width: 50%;
     }
     
     .card
@@ -81,8 +81,14 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
+    .btnAdm
+    {
+        margin: 0.2rem;
+    }
     .card:hover {
       box-shadow: 10px 15px 10px -10px rgba(31, 31, 31, 0.5);
       transition: all 0.5s ease;
@@ -135,6 +141,29 @@
     }
 </style>
         {{!-- background-color: #F1F4FC; --}}
+
+<div class="containerAdminCard">
+         <div class="card adminCard">
+          <h1 class="text-center txtAdminCardH">Admin üçün keçidlər</h1>
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="row">
+      <div class="col btnAdm">
+        <a class="btn btnAdminCard" href="/users/1">Users</a>
+
+      </div>
+      <div class="col btnAdm">
+        <a class="btn btnAdminCard" href="/adduser">Add User</a>
+
+      </div>
+      <div class="col btnAdm">
+        <a class="btn btnAdminCard" href="/admin">Admin</a>
+
+      </div>
+    </div>
+  </div>
+     </div>
+   </div>
+
 
 <div class="container">
     {{#if result}}
@@ -205,24 +234,4 @@
 
 </div>
 
- <div class="containerAdminCard">
-         <div class="card adminCard">
-          <h1 class="text-center txtAdminCardH">Admin üçün keçidlər</h1>
-<div class="container d-flex justify-content-center align-items-center">
-    <div class="row">
-      <div class="col">
-        <a class="btn btnAdminCard" href="/users/1">Users</a>
-
-      </div>
-      <div class="col">
-        <a class="btn btnAdminCard" href="/adduser">Add User</a>
-
-      </div>
-      <div class="col">
-        <a class="btn btnAdminCard" href="/admin">Admin</a>
-
-      </div>
-    </div>
-  </div>
-     </div>
-   </div>
+ 
