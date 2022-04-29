@@ -1,7 +1,7 @@
 {
     "development": {
         "username": "root",
-        "password": "bootcamp2021",
+        "password": "aytan03jfrv",
         "database": "electronDocument",
         "host": "localhost",
         "dialect": "mysql"
