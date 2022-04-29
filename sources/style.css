@@ -4,7 +4,7 @@ body {
     background-color: #17a2b8;
     height: 100vh;
   }
-  #login .container #login-row #login-column #login-box {
+  #login #login-row #login-column #login-box {
     margin-top: 40px;
     max-width: 600px;
     height: 400px;
@@ -20,10 +20,10 @@ body {
     width: 500px;
     transition: 0.1s;
   }
-  #login .container #login-row #login-column #login-box #login-form {
+  #login #login-row #login-column #login-box #login-form {
     padding: 20px;
   }
-  #login .container #login-row #login-column #login-box #login-form #register-link {
+  #login #login-row #login-column #login-box #login-form #register-link {
     margin-top: -85px;
   }
 
@@ -78,11 +78,6 @@ body {
       background-image: linear-gradient(to bottom, #79bc64, #5e7056);
       text-decoration: none;
     }
-    .navbar-default .navbar-brand{
-            color:#fff;
-            font-size:30px;
-            font-weight:bold;
-        }
     .form .form-control { margin-bottom: 10px; }
     @media (min-width:768px) {
         #home{
@@ -94,15 +89,10 @@ body {
             font-weight:bold;
         }}
 
-  .navbar{
-    margin-bottom: 50px;
-  }
-
   .register{
     padding: 30px 10px;
     
   }
-
 
   .pagination{
     display: flex;

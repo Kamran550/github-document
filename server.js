@@ -77,7 +77,7 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 
-// app.use('/sources', express.static('sources'));
+app.use('/js', express.static('js'));
 
 app.use('/uploads', express.static('uploads'))
 app.get('/', async (req, res) => {
