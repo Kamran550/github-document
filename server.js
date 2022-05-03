@@ -257,25 +257,18 @@ app.get('/users/:page', async (req, res) => {
             const comp = await User.count();
             const result = await User.findAll({
                 raw: true,
-                limit: 5,
-                offset: (req.params.page - 1) * 5,
+                limit: 7,
+                offset: (req.params.page - 1) * 7,
                 include: {
                     model: Company
                 },
                 raw: true,
                 nest: true
             });
-            const cnt = Math.ceil((comp) / 5);
+            const cnt = Math.ceil((comp) / 7);
             for (let i = 1; i <= cnt; i++) {
-
-                if (i <= 2) {
-                    pagination.push(i);
-                } else if (!pagination.includes('...')) {
-                    pagination.push('...')
-                }
-
+                pagination.push(i);
             };
-
 
             console.log(pagination);
             res.render('users', {
