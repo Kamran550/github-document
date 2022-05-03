@@ -267,9 +267,17 @@ app.get('/users/:page', async (req, res) => {
             });
             const cnt = Math.ceil((comp) / 5);
             for (let i = 1; i <= cnt; i++) {
-                pagination.push(i);
-            }
-            console.log(result);
+
+                if (i <= 2) {
+                    pagination.push(i);
+                } else if (!pagination.includes('...')) {
+                    pagination.push('...')
+                }
+
+            };
+
+
+            console.log(pagination);
             res.render('users', {
                 result,
                 pagination
@@ -286,8 +294,6 @@ app.get('/users/:page', async (req, res) => {
             })
         }
     }
-
-
 });
 
 
