@@ -40,8 +40,8 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: 'jaytan@inbox.ru',
-        pass: 'pmMMKVUUxjKgPus2Um54'
+        user: 'kamranferzeliyev550@gmail.com',
+        pass: '2004KEnan'
     }
 })
 console.log('salam')
@@ -882,4 +882,4 @@ app.get('/exit', async (req, res) => {
 
 app.listen(5001, () => {
     console.log("server dinleyir");
-})
+});

@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         through: models.user_company
         
       })
-    }
+    };
   };
   Company.init({
     name:{
